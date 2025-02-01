@@ -14,7 +14,7 @@ connectDB();
 //cors
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -35,7 +35,6 @@ app.use("/api/admin", adminRouter);
 app.get("/", (req, res) => {
   res.send("Home Route");
 });
-
 
 app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);
